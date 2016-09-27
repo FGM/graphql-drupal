@@ -1,7 +1,8 @@
 explorer:
   version: VERSION
   js:
-    js/dist/bundle.min.js: {}
+    js/dist/bundle.js: {}
+    #js/dist/bundle.min.js: {}
   css:
     component:
       css/graphiql.css: {}

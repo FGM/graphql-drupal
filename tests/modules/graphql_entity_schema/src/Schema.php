@@ -3,6 +3,7 @@
 namespace Drupal\graphql_entity_schema;
 
 use Drupal\graphql_entity_schema\Fields\EntityBundlesField;
+use Drupal\graphql_entity_schema\Fields\EntitySerializedField;
 use Drupal\graphql_entity_schema\Fields\EntityTypesField;
 use Youshido\GraphQL\Config\Schema\SchemaConfig;
 use Youshido\GraphQL\Schema\AbstractSchema;
@@ -23,16 +24,10 @@ class Schema extends AbstractSchema {
       'name' => 'QueryRoot',
       'fields' => [
         'entityBundles' => new EntityBundlesField(),
+        'entitySerialized' => new EntitySerializedField(),
         'entityTypes' => new EntityTypesField(),
       ] + $query,
     ]);
-
-//    if (!empty($mutation)) {
-//      $config['mutation'] = new ObjectType([
-//        'name' => 'MutationRoot',
-//        'fields' => $mutation,
-//      ]);
-//    }
 
     return parent::__construct($config);
   }
