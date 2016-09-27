@@ -1,0 +1,5 @@
+services:
+  graphql_entity_schema.schema_provider:
+    class: Drupal\graphql_entity_schema\SchemaProvider
+    tags:
+        - { name: graphql_schema_provider }

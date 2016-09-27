@@ -1,0 +1,7 @@
+name: GraphQL Entity Schema
+type: module
+description: Provides a GraphQL Schema for entity information.
+core: 8.x
+package: Custom
+dependencies:
+  - graphql
