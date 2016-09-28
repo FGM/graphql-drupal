@@ -2,53 +2,56 @@
 
 namespace Drupal\graphql_entity_schema\Fields;
 
-use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
-use Drupal\Core\Cache\RefinableCacheableDependencyTrait;
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\graphql_entity_schema\Types\EntityTypeType;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Youshido\GraphQL\Config\Field\FieldConfig;
 use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Field\AbstractField;
-use Youshido\GraphQL\Type\ListType\ListType;
+use Youshido\GraphQL\Type\NonNullType;
 use Youshido\GraphQL\Type\Scalar\StringType;
 
-class EntityTypesField extends AbstractField implements ContainerAwareInterface, RefinableCacheableDependencyInterface {
+class EntityTypeField extends AbstractField implements ContainerAwareInterface {
+  const ARG = 'entityType';
 
   use ContainerAwareTrait;
-  use RefinableCacheableDependencyTrait;
 
   /**
    * {@inheritdoc}
    */
   public function build(FieldConfig $config) {
     parent::build($config);
+    $config->addArgument(static::ARG, [
+      'type' => new NonNullType(new StringType()),
+    ]);
   }
 
   /**
    * {@inheritdoc}
    */
   public function getType() {
-    return new ListType(new EntityTypeType());
+    return new EntityTypeType();
   }
 
   /**
    * {@inheritdoc}
    */
   public function getName() {
-    return 'entityTypes';
+    return static::ARG;
   }
 
   /**
    * {@inheritdoc}
    */
   public function resolve($value, array $args, ResolveInfo $info) {
-    /** @var EntityTypeManager $entityTypeManager */
+    $type = $args[static::ARG];
+
+    /** @var EntityTypeManagerInterface $entityTypeManager */
     $entityTypeManager = $this->container->get('entity_type.manager');
 
-    $typeDefinitions = $entityTypeManager->getDefinitions();
-    sort($typeDefinitions);
-    return $typeDefinitions;
+    $definition = $entityTypeManager->getDefinition($type);
+    return $definition;
   }
+
 }
