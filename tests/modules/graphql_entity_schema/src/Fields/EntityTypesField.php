@@ -12,7 +12,6 @@ use Youshido\GraphQL\Config\Field\FieldConfig;
 use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Field\AbstractField;
 use Youshido\GraphQL\Type\ListType\ListType;
-use Youshido\GraphQL\Type\Scalar\StringType;
 
 class EntityTypesField extends AbstractField implements ContainerAwareInterface, RefinableCacheableDependencyInterface {
 

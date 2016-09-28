@@ -14,7 +14,6 @@ class SchemaProvider implements SchemaProviderInterface {
    */
   public function getQuerySchema() {
     return [
-      new EntityBundlesField(),
       new EntitySerializedField(),
       new EntityTypeField(),
       new EntityTypesField(),
