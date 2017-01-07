@@ -47,6 +47,11 @@ services:
     arguments: ['@entity_type.manager', '@typed_data_manager', '@graphql.type_resolver']
     tags:
       - { name: graphql_schema_provider }
+  graphql.schema_provider.url_alias:
+    class: Drupal\graphql\SchemaProvider\UrlAliasSchemaProvider
+    arguments: ['@path.alias_storage', '@typed_data_manager', '@graphql.type_resolver']
+    tags:
+      - { name: graphql_schema_provider }
   graphql.type_resolver:
     class: Drupal\graphql\TypeResolver\TypeResolver
     tags:
