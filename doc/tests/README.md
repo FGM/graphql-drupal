@@ -28,7 +28,8 @@ Adjust configuration according to your actual setup.
 ## Run the tests from the CLI or PhpStorm
 ### Setup Drupal for CLI tests with PHPunit
 
-Basically follow the instructions on https://www.drupal.org/docs/8/phpunit/running-phpunit-tests#non-unit-tests
+Basically, follow the instructions on 
+https://www.drupal.org/docs/8/phpunit/running-phpunit-tests#non-unit-tests
 
 
 * Create a custom PHPunit run configuration from the default core version:
@@ -76,7 +77,7 @@ Basically follow the instructions on https://www.drupal.org/docs/8/phpunit/runni
     rm -fr ../sites/simpletest/browser_output/*
     
     # Run tests
-    ../vendor/bin/phpunit ../modules/graphql/tests/src
+    ../vendor/bin/phpunit ../modules/contrib/graphql/tests/src
 
 
 ### Run the tests from PhpStorm
