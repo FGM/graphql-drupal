@@ -11,6 +11,9 @@ which defines a way to obtain the latest user created on the site (from
 * since queries add fields to the schema, add a new field class to the module
 * add a schema provider to the module, referencing the new field
 
+![graphiql using the userLatest query](./queries-example.png)
+
+
 ## Adding a field class
 
 * Field are simple classes (not services), extending the 
@@ -115,7 +118,3 @@ Field objects introduced by the provider:
     return $fields;
   }
 ```
-
-## Using the new query
-
-![graphiql using the userLatest query](./queries-example.png)
