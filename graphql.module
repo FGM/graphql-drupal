@@ -38,11 +38,11 @@ function graphql_help($route_name) {
 ');
 
   $endpointRoute = 'graphql.request';
-  $endpointPath = \Drupal::urlGenerator()->generateFromRoute($endpointRoute, [], ['absolute' => TRUE]);
+  $endpointPath = \Drupal::urlGenerator()->generateFromRoute($endpointRoute);
   $endpointUrl = Url::fromRoute($endpointRoute)->toString();
 
   $explorerRoute = 'graphql.explorer';
-  $explorerPath = \Drupal::urlGenerator()->getPathFromRoute($explorerRoute);
+  $explorerPath = \Drupal::urlGenerator()->generateFromRoute($explorerRoute);
   $explorerUrl = Url::fromRoute($explorerRoute)->toString();
 
   $exploring = t('Exploring / consuming the API');

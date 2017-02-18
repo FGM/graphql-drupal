@@ -1,0 +1,8 @@
+services:
+  graphql_example_type.schema_provider:
+    class: 'Drupal\graphql_example_type\SchemaProvider\DbLogSchemaProvider'
+    arguments:
+      - '@typed_data_manager'
+      - '@graphql.type_resolver'
+    tags:
+      - name: 'graphql_schema_provider'

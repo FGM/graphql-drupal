@@ -9,7 +9,7 @@
   * [Decoupling Drupal (TODO)](concepts/headless.md)
 * [Back-end (TODO)](back/README.md)
   * [Exposing new queries (REVIEW)](back/queries.md)
-  * [Exposing new types (TODO)](back/types.md)
+  * [Exposing new types (WIP)](back/types.md)
   * [Builtin schema and fields (TODO)](back/schema.md)
   * [The PHP library (TODO)](back/youshido.md)
   * [Debugging (TODO)](back/debug.md)

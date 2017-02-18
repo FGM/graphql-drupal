@@ -1,0 +1,7 @@
+name: 'GraphQL Example 2: Type'
+type: module
+description: 'GraphQL Example 2: exposes a query including a field of new type.'
+package: Web services
+core: 8.x
+dependencies:
+  - graphql

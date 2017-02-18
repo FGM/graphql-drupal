@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * This module provides a schema extension defining a new query field.
+ */
+
+/**
+ * Implements hook_graphql_help().
+ */
+function graphql_example_type_graphql_help() {
+  $help = t('The <code>graphql_type_query</code> module provides an example
+for the second complexity level for a GraphQL schema extension: adding a field 
+of a new type, and a query exposing it.');
+
+  return ['step2' => $help];
+}
+
+/**
+ * Implements hook_help().
+ */
+function graphql_example_type_help($route_name) {
+  return graphql_help_example($route_name, 'help.page.graphql_example_type');
+}

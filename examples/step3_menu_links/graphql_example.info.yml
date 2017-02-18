@@ -1,6 +1,6 @@
-name: GraphQL Example
+name: 'GraphQL Example 3: Complete extension'
 type: module
-description: 'Exposes a custom GraphQL Schema for demo purposes.'
+description: 'GraphQL Example 3: exposes a complete custom GraphQL Schema.'
 package: Web services
 core: 8.x
 dependencies:
